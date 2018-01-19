@@ -3,7 +3,6 @@ package coinpurse;
 import java.util.List;
 import java.util.ArrayList;
 import java.util.Collections;
-//TODO import List, ArrayList, and Collections
 // You will use Collections.sort() to sort the coins
 
 /**
@@ -11,11 +10,10 @@ import java.util.Collections;
  *  You can insert coins, withdraw money, check the balance,
  *  and check if the purse is full.
  *  
- *  @author your name
+ *  @author Kaninpat
  */
 public class Purse {
     /** Collection of objects in the purse. */
-    //TODO declare a List of Coins named "money".
     List<Coin> money;
     /** Capacity is maximum number of items the purse can hold.
      *  Capacity is set when the purse is created and cannot be changed.
@@ -63,7 +61,6 @@ public class Purse {
      * Return the capacity of the coin purse.
      * @return the capacity
      */
-    //TODO write accessor method for capacity. Use Java naming convention.
     public int getCapacity() { 
     	
 		return this.capacity;
@@ -77,12 +74,11 @@ public class Purse {
      *  @return true if purse is full.
      */
     public boolean isFull() {
-        //TODO complete this method. Avoid writing duplicate code (Don't Repeat Yourself).
+
     	if(money.size() == this.capacity) {
-    		
     		return true;
-    		
     	}
+    	
         return false;
         
     }
@@ -96,14 +92,14 @@ public class Purse {
      */
     public boolean insert( Coin coin ) {
         // if the purse is already full then can't insert anything.
-        //TODO complete the insert method
+
     	if(this.isFull() || coin.getValue() <= 0) {
-    		
     		return false;
-    		
     	}
+    	
 		money.add(coin);
 		return true;
+		
     }
     
     /**  
@@ -115,8 +111,8 @@ public class Purse {
 	 *    or null if cannot withdraw requested amount.
      */
     public Coin[] withdraw( double amount ) {
-        //TODO don't allow to withdraw amount < 0
-        if(amount == 0 || money.size() == 0) {
+
+        if(amount <= 0 || money.size() == 0) {
         	return null;
         }
 	   
@@ -141,6 +137,7 @@ public class Purse {
    		
 	    		if(amountNeededToWithdraw == 0) break;
 	    	}
+			
 		if(amountNeededToWithdraw != 0) {
 			return null;
 		}
@@ -156,7 +153,7 @@ public class Purse {
 		
 		Coin[] coinsToWithdraw = new Coin[temp.size()];
 		temp.toArray(coinsToWithdraw);
-        return coinsToWithdraw; //TODO replace this with real code
+        return coinsToWithdraw;
 	}
   
     /** 
@@ -164,9 +161,7 @@ public class Purse {
      * It can return whatever is a useful description.
      */
     public String toString() {
-        //TODO complete this
     	return money.size() + " coin/coins with value " + this.getBalance();
     }
 
 }
-//TODO When you finish, there should not be any TODO comments, including this one!

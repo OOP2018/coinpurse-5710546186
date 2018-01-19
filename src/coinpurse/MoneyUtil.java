@@ -4,14 +4,32 @@ import java.util.ArrayList;
 import java.util.Collections;
 import java.util.List;
 
+/**
+ * Do the utility stuff to a list of coin
+ * 
+ * @author Kaninpat
+ *
+ */
 public class MoneyUtil {
 
+	/**
+	 * Sort a coin list
+	 * 
+	 * @param coins for sorting
+	 */
 	public static void sortCoins(List<Coin> coins) {
 		
 		Collections.sort(coins);
 		
 	}
 	
+	/**
+	 * Create a new array of coin of this currency
+	 * 
+	 * @param coins for filtering
+	 * @param currency for a new array
+	 * @return a coin list of that currency
+	 */
 	public static List<Coin> filterByCurrency(List<Coin> coins, String currency){
 		
 		List<Coin> filteredList = new ArrayList<Coin>();
